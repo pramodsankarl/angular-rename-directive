@@ -2,7 +2,7 @@
 A simple angular 1.0 module to rename a directive
 
 
-Should you run into issues where you are using some thirdparty directives and having name conflicts where directives are both (attribute and element resticted (`EA`)) and name of one directive (often poorly named) is an attribute for another directive ([Here is an example use case](http://stackoverflow.com/questions/26416206/directive-name-and-attribute-name-clashing)). You can use this module and set up renaming the directives.
+Should you run into issues where you are using some thirdparty directives and having name conflicts where directives are both (attribute and element resticted (`EA`)) and name of one directive (often poorly named) is an attribute for another directive ([Here is an example use case for which i had provided an answer in Stack overflow some time back](http://stackoverflow.com/questions/26416206/directive-name-and-attribute-name-clashing)). You can use this module and set up renaming the directives.
 
 Usage:
 
