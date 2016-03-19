@@ -12,7 +12,7 @@ Usage:
 
   `angular.module('myApp', [..., psl.renameDirectiveUtil]);`
     
-3) Set up a config block in your module and inject `renameDirectiveProvider`
+3) Set up a config block in your module and inject `renameDirectiveProvider`. Inside the config block invoke the provider's `setConfig` method with target directive configuration. You can specify multiple directives as well in the config as config is a javascript object in which key is the source directive you want to rename and its value as the new name for the directive.
 
 ```
 angular.module('myApp').config(['renameDirectiveProvider',function(renameDirectiveProvider){
