@@ -24,4 +24,4 @@ angular.module('myApp').config(['renameDirectiveProvider',function(renameDirecti
 ```
 
 
-However note that this is rarely applicable if one follows proper semantics in naming the directives and using proper restriction `E`. For any directive containing template should be only declared as element restricted(`E`). Andgular 1.5 component promotes this standard.
+However note that this is rarely applicable if one follows proper semantics in naming the directives and using proper restriction `E`. For any directive containing template should be only declared as element restricted(`E`). Angular 1.5 `.component(` construct promotes this standard.
