@@ -1,12 +1,5 @@
 angular.module('psl.renameDirectiveUtil', [])
-.config(['$compileProvider', function ($compileProvider) {
-    app.directive = function (name, dirObject) {
-        $compileProvider.directive(name, function(){
-           return dirObject[0];
-        });
-    };
-}])
-.provider('renameDirective', ['$provide' , function($provide){
+.provider('renameDirective', ['$provide' , '$compileProvider' , function($provide, $compileProvider){
     var directiveSet;
  
     this.setConfig = function setConfig(config){
@@ -16,7 +9,11 @@ angular.module('psl.renameDirectiveUtil', [])
           sourceDir +=  'Directive';
           //Set up decorators
           $provide.decorator(sourceDir, function decorate($delegate){
-              app.directive(targetDir, $delegate);
+            
+             $compileProvider.directive(targetDir, function(){
+              return $delegate[0];
+             });
+             
               return function() { return angular.noop };
           });
       });
