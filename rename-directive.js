@@ -9,22 +9,22 @@ angular.module('psl.renameDirectiveUtil', [])
 .provider('renameDirective', ['$provide' , function($provide){
     var directiveSet;
  
-    this.setConfig = function(config){
+    this.setConfig = function setConfig(config){
       directiveSet = config;
-      
-       angular.forEach(directiveSet, function(targetDir,sourceDir ){
+       
+       angular.forEach(directiveSet, function iterator(targetDir, sourceDir){
           sourceDir +=  'Directive';
           //Set up decorators
-          $provide.decorator(sourceDir, function($delegate){
+          $provide.decorator(sourceDir, function decorate($delegate){
               app.directive(targetDir, $delegate);
               return function() { return angular.noop };
           });
       });
     };
 
-    this.$get  = ['$injector', function($injector){
+    this.$get  = ['$injector', function renameDirectiveService($injector){
       return { 
-        rename : function(){
+        rename : function rename(){
           angular.forEach(directiveSet, function(_,dir){
              var sourceDir = dir + 'Directive';
             $injector.get(sourceDir);
